@@ -12,7 +12,7 @@ Unlike a purely theoretical optimization exercise, this project explicitly separ
 
 ## Live Dashboard
 
-**Interactive Streamlit Dashboard:** `[Add your deployed Streamlit URL here]`
+**Interactive Streamlit Dashboard:** "https://portfolio-optimization-india.streamlit.app/"
 
 The dashboard lets you explore:
 
