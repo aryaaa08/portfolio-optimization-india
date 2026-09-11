@@ -109,6 +109,7 @@ def load_data():
     weights,
     frontier,
     daily_returns,
+    random_portfolios,
     robustness,
     sector_weights,
     risk_free_sensitivity,
