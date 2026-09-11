@@ -5,7 +5,12 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from pathlib import Path
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
 
 # ============================================================
 # PAGE CONFIGURATION
@@ -44,42 +49,45 @@ st.divider()
 def load_data():
 
     performance = pd.read_csv(
-        "performance_table.csv",
+        DATA_DIR / "performance_table.csv",
         index_col=0
     )
 
     weights = pd.read_csv(
-        "optimized_portfolio_weights.csv",
+        DATA_DIR / "optimized_portfolio_weights.csv",
         index_col=0
     )
 
     frontier = pd.read_csv(
-        "efficient_frontier.csv"
+        DATA_DIR / "efficient_frontier.csv"
     )
 
     daily_returns = pd.read_csv(
-        "daily_returns.csv",
+        DATA_DIR / "daily_returns.csv",
         index_col=0,
         parse_dates=True
     )
 
+    random_portfolios = pd.read_pickle(
+        DATA_DIR / "random_portfolios.pkl"
+    )
+
     robustness = pd.read_csv(
-        "robustness_performance_table.csv",
+        DATA_DIR / "robustness_performance_table.csv",
         index_col=0
     )
 
     sector_weights = pd.read_csv(
-        "sector_weights.csv",
+        DATA_DIR / "sector_weights.csv",
         index_col=0
     )
 
     risk_free_sensitivity = pd.read_csv(
-        "risk_free_sensitivity.csv",
-        index_col=0
+        DATA_DIR / "risk_free_sensitivity.csv"
     )
 
-    wealth = pd.read_csv(
-        "robustness_wealth_paths.csv",
+    wealth_paths = pd.read_csv(
+        DATA_DIR / "robustness_wealth_paths.csv",
         index_col=0,
         parse_dates=True
     )
@@ -89,12 +97,12 @@ def load_data():
         weights,
         frontier,
         daily_returns,
+        random_portfolios,
         robustness,
         sector_weights,
         risk_free_sensitivity,
-        wealth
+        wealth_paths
     )
-
 
 (
     performance,
