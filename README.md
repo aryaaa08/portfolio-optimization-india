@@ -1,4 +1,3 @@
-# portfolio-optimization-india
 # Portfolio Optimization & Backtesting of Indian Equities
 
 ### Modern Portfolio Theory · Quantitative Finance · Out-of-Sample Backtesting
