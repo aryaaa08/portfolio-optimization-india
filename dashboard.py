@@ -391,7 +391,7 @@ fig.add_trace(
 # Random portfolios
 
 random_portfolios = pd.read_pickle(
-    "random_portfolios.pkl"
+    DATA_DIR / "random_portfolios.pkl"
 )
 
 fig.add_trace(
